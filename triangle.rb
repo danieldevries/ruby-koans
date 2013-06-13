@@ -14,7 +14,9 @@
 #   about_triangle_project_2.rb
 #
 def triangle(a, b, c)
-  # WRITE THIS CODE
+  a, b, c = list = [a, b, c].sort
+  raise TriangleError if a <= 0 || a + b <= c
+  [:equilateral, :isosceles, :scalene][list.uniq.size - 1]
 end
 
 # Error class used in part 2.  No need to change this code.
